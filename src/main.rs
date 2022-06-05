@@ -85,11 +85,8 @@ fn main() {
         .build()
         .unwrap();
 
-    graphics::set_screen_coordinates(
-        &mut ctx,
-        graphics::Rect::new(-600.0, -400.0, 1200.0, 800.0),
-    )
-    .expect("Failed to update screen coordinates");
+    graphics::set_screen_coordinates(&mut ctx, graphics::Rect::new(-600.0, -400.0, 1200.0, 800.0))
+        .expect("Failed to update screen coordinates");
 
     let state = State::new();
 
