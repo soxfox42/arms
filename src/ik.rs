@@ -48,7 +48,7 @@ impl Arms {
 
                 let to_end = end_pos - pivot_pos;
                 let to_target = target - pivot_pos;
-                self.angles[arm] += to_end.angle_between(to_target);
+                self.angles[arm] += to_end.angle_between(to_target).clamp(-0.01, 0.01);
             }
         }
     }
