@@ -17,9 +17,9 @@ impl State {
         Self {
             arms: ik::Arms::new(3, radius / 3.0),
             colors: vec![
+                graphics::Color::from_rgb(0, 127, 255),
                 graphics::Color::from_rgb(255, 127, 0),
                 graphics::Color::from_rgb(255, 0, 127),
-                graphics::Color::from_rgb(0, 127, 255),
             ],
             size,
         }
