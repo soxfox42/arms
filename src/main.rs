@@ -33,14 +33,14 @@ impl event::EventHandler for State {
         graphics::clear(ctx, graphics::Color::BLACK);
 
         let size: Vec2 = graphics::size(ctx).into();
-        let min_size = size.min_element() - 50.0;
+        let radius = (size.min_element() - 50.0) / 2.0;
         graphics::set_screen_coordinates(ctx, graphics::Rect::new(0.0, 0.0, size.x, size.y))?;
 
         let stroke_options = graphics::StrokeOptions::default()
-            .with_line_width(min_size / 50.0)
+            .with_line_width(radius / 25.0)
             .with_line_cap(graphics::LineCap::Round);
 
-        let arm_length = min_size / (self.angles.len() as f32) / 2.0;
+        let arm_length = radius / (self.angles.len() as f32);
 
         let mut pos = size * 0.5;
         let mut angle_sum = 0.0;
